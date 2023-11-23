@@ -1,4 +1,3 @@
-
 import Container from '@mui/material/Container'
 import BoardContent from './BoardContent'
 import BoardBar from './BoardBar'
