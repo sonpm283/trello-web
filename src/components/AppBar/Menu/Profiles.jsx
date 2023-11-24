@@ -24,24 +24,24 @@ function Profiles() {
 
   return (
     <Box>
-      <Tooltip title="Account settings">
+      <Tooltip title='Account settings'>
         <IconButton
           onClick={handleClick}
-          size="small"
+          size='small'
           sx={{ padding: 0 }}
           aria-controls={open ? 'basic-menu-profiles' : undefined}
-          aria-haspopup="true"
+          aria-haspopup='true'
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 30, height: 30 }}
-            src="https://learnopencv.com/wp-content/uploads/2021/04/image-15.png"
-            alt="Avatar"
+            sx={{ width: 36, height: 36 }}
+            src='https://learnopencv.com/wp-content/uploads/2021/04/image-15.png'
+            alt='Avatar'
           />
         </IconButton>
       </Tooltip>
       <Menu
-        id="basic-menu-profiles"
+        id='basic-menu-profiles'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -58,19 +58,19 @@ function Profiles() {
         <Divider />
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
+            <PersonAdd fontSize='small' />
           </ListItemIcon>
           Add another account
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <Settings fontSize="small" />
+            <Settings fontSize='small' />
           </ListItemIcon>
           Settings
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <Logout fontSize="small" />
+            <Logout fontSize='small' />
           </ListItemIcon>
           Logout
         </MenuItem>
