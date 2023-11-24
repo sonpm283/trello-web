@@ -12,16 +12,16 @@ import Button from '@mui/material/Button'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
 const MENU_STYLE = {
-  color: 'primary.main',
-  bgcolor: 'white',
+  color: 'white',
+  bgcolor: 'transparent',
   border: 'none',
-  paddingX: '5px',
+  px: '5px',
   borderRadius: '4px',
-  '& .MuiSvgIcon-root': {
-    color: 'primary.main'
+  '.MuiSvgIcon-root': {
+    color: 'white'
   },
   '&:hover': {
-    // bgcolor: 'primary.light'
+    // bgcolor: 'primary.dark'
   }
 }
 
@@ -33,11 +33,13 @@ function BoardBar() {
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%',
-        px: 2,
+        px: 1,
         overflow: 'auto',
         gap: 2,
-        borderTop: '1px solid #1976d2',
-        height: (theme) => theme.trello.boardBarHeight
+        height: (theme) => theme.trello.boardBarHeight,
+        borderBottom: '1px solid white',
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -74,8 +76,14 @@ function BoardBar() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Button
+          sx={{
+            color: 'white',
+            borderColor: 'white',
+            '&:hover': {
+              borderColor: 'currentColor'
+            }
+          }}
           variant='outlined'
-          href='#contained-buttons'
           startIcon={<PersonAddIcon />}
         >
           Invite
@@ -84,9 +92,10 @@ function BoardBar() {
           max={5}
           sx={{
             '& .MuiAvatar-root': {
-              width: 36,
-              height: 36,
-              fontSize: 14
+              width: 34,
+              height: 34,
+              fontSize: 16,
+              ml: 0.2
             }
           }}
         >

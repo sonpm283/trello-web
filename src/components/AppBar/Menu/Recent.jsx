@@ -7,7 +7,6 @@ import Divider from '@mui/material/Divider'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Check from '@mui/icons-material/Check'
 
-
 import Box from '@mui/system/Box'
 import { useState } from 'react'
 
@@ -24,9 +23,10 @@ function Recent() {
   return (
     <Box>
       <Button
-        id="basic-button-recent"
+        sx={{ color: 'white' }}
+        id='basic-button-recent'
         aria-controls={open ? 'basic-menu-recent' : undefined}
-        aria-haspopup="true"
+        aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         endIcon={<ExpandMoreIcon />}
@@ -34,7 +34,7 @@ function Recent() {
         Recent
       </Button>
       <Menu
-        id="basic-menu-recent"
+        id='basic-menu-recent'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
