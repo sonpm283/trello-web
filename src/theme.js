@@ -1,10 +1,15 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 // Create a theme instance.
 
+const APP_BAR_HEIHGT = '58px'
+const BOARD_BAR_HEIHGT = '60px'
+const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIHGT} - ${BOARD_BAR_HEIHGT})`
+
 const theme = extendTheme({
   trello: {
-    appBarHeight: '58px',
-    boardBarHeight: '60px'
+    appBarHeight: APP_BAR_HEIHGT,
+    boardBarHeight: BOARD_BAR_HEIHGT,
+    boardContentHeight: BOARD_CONTENT_HEIGHT
   },
   colorSchemes: {
     // custom darkmode/lightmode
@@ -50,6 +55,15 @@ const theme = extendTheme({
       styleOverrides: {
         root: {
           fontSize: '0.875rem'
+        }
+      }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          '&.MuiTypography-body1': {
+            fontSize: '0.875rem'
+          }
         }
       }
     },
