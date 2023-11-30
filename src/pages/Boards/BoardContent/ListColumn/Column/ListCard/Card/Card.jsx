@@ -8,23 +8,15 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 
-function Card({ temporaryHideMedia }) {
-  if (temporaryHideMedia) {
+function Card({ card }) {
+  // nếu cả 3 trường không có data thì không show CardActions
+  const shouldShowCardAction = () => {
     return (
-      <MuiCard
-        sx={{
-          cursor: 'pointer',
-          boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
-          overflow: 'unset'
-        }}
-      >
-        <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}>
-          <Typography>Card test 01</Typography>
-        </CardContent>
-      </MuiCard>
+      !!card?.memberIds.length ||
+      !!card?.comments.length ||
+      !!card?.attachments.length
     )
   }
-
   return (
     <MuiCard
       sx={{
@@ -33,26 +25,39 @@ function Card({ temporaryHideMedia }) {
         overflow: 'unset'
       }}
     >
-      <CardMedia
-        component='img'
-        alt='green iguana'
-        height='140'
-        image='https://learnopencv.com/wp-content/uploads/2021/04/image-15.png'
-      />
+      {card?.cover && (
+        <CardMedia
+          component='img'
+          alt='green iguana'
+          height='140'
+          image={card?.cover}
+        />
+      )}
+
       <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}>
-        <Typography>Card 01</Typography>
+        <Typography>{card?.title}</Typography>
       </CardContent>
-      <CardActions sx={{ p: '0 4px 8px 4px' }}>
-        <Button startIcon={<GroupIcon />} size='small'>
-          20
-        </Button>
-        <Button startIcon={<CommentIcon />} size='small'>
-          19
-        </Button>
-        <Button startIcon={<AttachmentIcon />} size='small'>
-          25
-        </Button>
-      </CardActions>
+      {shouldShowCardAction() && (
+        <CardActions sx={{ p: '0 4px 8px 4px' }}>
+          {!!card?.memberIds?.length && (
+            <Button startIcon={<GroupIcon />} size='small'>
+              {card?.memberIds?.length}
+            </Button>
+          )}
+
+          {!!card?.comments?.length && (
+            <Button startIcon={<CommentIcon />} size='small'>
+              {card?.comments?.length}
+            </Button>
+          )}
+
+          {!!card?.comments?.length && (
+            <Button startIcon={<AttachmentIcon />} size='small'>
+              {card?.attachments?.length}
+            </Button>
+          )}
+        </CardActions>
+      )}
     </MuiCard>
   )
 }
