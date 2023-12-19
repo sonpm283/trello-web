@@ -39,42 +39,21 @@ function BoardBar({ board }) {
         gap: 2,
         height: (theme) => theme.trello.boardBarHeight,
         borderBottom: '1px solid white',
-        bgcolor: (theme) =>
-          theme.palette.mode === 'dark' ? '#34495e' : '#1976d2',
+        bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
         '&::-webkit-scrollbar-track': { m: 2 }
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip
-          sx={MENU_STYLE}
-          icon={<DashboardIcon />}
-          label={board?.title}
-          clickable
-        />
+        <Chip sx={MENU_STYLE} icon={<DashboardIcon />} label={board?.title} clickable />
         <Chip
           sx={MENU_STYLE}
           icon={<VpnLockIcon />}
           label={capitalizeFirstLetter(board?.type)}
           clickable
         />
-        <Chip
-          sx={MENU_STYLE}
-          icon={<AddToDriveIcon />}
-          label='Add To Google Drive'
-          clickable
-        />
-        <Chip
-          sx={MENU_STYLE}
-          icon={<BoltIcon />}
-          label='Automation'
-          clickable
-        />
-        <Chip
-          sx={MENU_STYLE}
-          icon={<FilterListIcon />}
-          label='Filters'
-          clickable
-        />
+        <Chip sx={MENU_STYLE} icon={<AddToDriveIcon />} label='Add To Google Drive' clickable />
+        <Chip sx={MENU_STYLE} icon={<BoltIcon />} label='Automation' clickable />
+        <Chip sx={MENU_STYLE} icon={<FilterListIcon />} label='Filters' clickable />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Button

@@ -35,8 +35,7 @@ function AppBar() {
         px: 2,
         overflow: 'auto',
         height: (theme) => theme.trello.appBarHeight,
-        bgcolor: (theme) =>
-          theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0',
+        bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0'),
         '&::-webkit-scrollbar-track': { m: 2 }
       }}
     >
@@ -50,12 +49,7 @@ function AppBar() {
             cursor: 'pointer'
           }}
         >
-          <SvgIcon
-            component={TrelloIcon}
-            inheritViewBox
-            fontSize='small'
-            sx={{ color: 'white' }}
-          />
+          <SvgIcon component={TrelloIcon} inheritViewBox fontSize='small' sx={{ color: 'white' }} />
           <Typography
             variant='span'
             sx={{

@@ -2,10 +2,7 @@ import Box from '@mui/system/Box'
 import Column from './Column/Column'
 import NoteAddIcon from '@mui/icons-material/NoteAdd'
 import Button from '@mui/material/Button'
-import {
-  SortableContext,
-  horizontalListSortingStrategy
-} from '@dnd-kit/sortable'
+import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable'
 
 function ListColumn({ columns }) {
   // biến đổi thành dạng ['column-id-01', 'column-id-02', 'column-id-03'](thư viện yêu cầu về dạng này)
