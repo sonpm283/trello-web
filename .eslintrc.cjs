@@ -4,11 +4,14 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:prettier/recommended'
   ],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react', 'react-hooks', 'react-refresh'],
+  plugins: ['react', 'react-hooks', 'react-refresh', 'prettier'],
   rules: {
     // React
     'react-refresh/only-export-components': 'warn',
@@ -16,6 +19,13 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 0,
     'react/display-name': 0,
+
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
+      }
+    ],
 
     //MUI
     'no-restricted-imports': [

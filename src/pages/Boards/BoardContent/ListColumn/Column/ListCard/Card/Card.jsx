@@ -39,9 +39,7 @@ function Card({ card }) {
         overflow: 'unset'
       }}
     >
-      {card?.cover && (
-        <CardMedia component='img' alt='green iguana' height='140' image={card?.cover} />
-      )}
+      {card?.cover && <CardMedia component='img' alt='green iguana' height='140' image={card?.cover} />}
 
       <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}>
         <Typography>{card?.title}</Typography>
